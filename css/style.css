@@ -1,5 +1,69 @@
+/* Color Palette: 
+(Canva Colors - Tidal Wave)
+Misty Blue
+#CFE0EA
+Teal Green
+#01949A
+Slate
+#578384
+Teal
+#016367 */
+
+:root {
+  --background: #CFE0EA;
+  --text: #016367;
+  --nav: #578384;
+  --frame: #01949A;
+}
+
 * {
-  box-sizing: border-box;
+  /* box-sizing: content-box; */
+  background-color: var(--background);
+}
+
+header {
+  position:fixed;
+  height:50px;
+  width: 100%;
+  background-color: var(--background);
+}
+
+h1 {
+  float: left;
+  padding-top: 10px;
+  padding-left: 10px;
+  color: var(--text);
+  /* background-color: var(--background); */
+}
+
+nav {
+  padding: 10px;
+  text-align: right;
+  /* width: 100%; */
+  background-color: var(--background);
+  
+}
+
+ul li {
+  display: inline-block;
+  color: var(--text);
+  /* text-decoration: none; */
+  padding: 5px;
+  margin-right: 15px;
+  list-style-type: none;
+  /* background-color: var(--nav); */
+}
+
+.banner {
+  background-image: url("../images/banner-tide.jpg");
+  height: 500px;
+  background-size:cover;
+}
+
+h2 {
+  color: var(--text);
+  display:block;
+  
 }
 
 body {
@@ -9,7 +73,7 @@ body {
   line-height: 1.5;
 }
 
-h1,
+
 h2,
 h3,
 h4,
@@ -20,4 +84,13 @@ h6 {
 
 p {
   margin: 0;
+}
+
+.contact-section {
+  text-align: center;
+}
+
+.contact {
+  height:50px;
+  width: 50px;
 }
