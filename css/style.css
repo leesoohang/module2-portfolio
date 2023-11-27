@@ -1,13 +1,9 @@
 /* Color Palette: 
 (Canva Colors - Tidal Wave)
-Misty Blue
-#CFE0EA
-Teal Green
-#01949A
-Slate
-#578384
-Teal
-#016367 */
+Misty Blue (lightest) #CFE0EA
+Teal Green (dark) #01949A
+Slate (gray tone) #578384
+Teal (darkest) #016367 */
 
 :root {
   --background: #CFE0EA;
@@ -17,69 +13,148 @@ Teal
 }
 
 * {
-  /* box-sizing: content-box; */
+  box-sizing: border-box;
   background-color: var(--background);
 }
 
 header {
-  position:fixed;
-  height:50px;
+  background-color: var(--nav);
+  height: 60px;
+  position: fixed;
   width: 100%;
-  background-color: var(--background);
-}
-
-h1 {
-  float: left;
-  padding-top: 10px;
-  padding-left: 10px;
-  color: var(--text);
-  /* background-color: var(--background); */
+  top:0;
 }
 
 nav {
-  padding: 10px;
-  text-align: right;
-  /* width: 100%; */
-  background-color: var(--background);
-  
+  float: right;
+  top: 10px;
+  background-color: var(--nav);
+  }
+
+nav ul {
+  margin: 10px;
+  padding: 0;
 }
 
-ul li {
-  display: inline-block;
-  color: var(--text);
-  /* text-decoration: none; */
-  padding: 5px;
-  margin-right: 15px;
+nav ul li {
+  float: left;
+  margin: 5px 20px;
   list-style-type: none;
-  /* background-color: var(--nav); */
+  font-size: 20px;  
+  background-color: var(--nav);
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  color: var(--background);
+  background-color: var(--nav);
+}
+
+h1 {
+  font-size: 20px;
+  top: 0;
+  margin-left: 5px;
+  float: left;
+  color: var(--background);
+  background-color: var(--nav);
+}
+
+
+a:hover {
+  text-decoration:underline double var(--background);
+  color: var(--background);
 }
 
 .banner {
-  background-image: url("../images/banner-tide.jpg");
+  background-image: url("../images/banner-hometown.jpg");
   height: 500px;
+  margin-top: 50px;
   background-size:cover;
 }
 
+.profile-picture {
+  float: right;
+  border-radius: 50%;
+}
+
+
 h2 {
+  padding: 15px;
+  position:absolute;
+  top: 450px;
+  right: 8px;
+  font-size: 30px;
+  color: var(--background);
+  background-color: var(--nav);
+}
+
+h3 {
   color: var(--text);
   display:block;
-  
+  font-size: 30px;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  line-height: 1.5;
+.page-section {
+  margin: 50px;
 }
 
+#grid-container {
+  margin: 5px 20px;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    'first first'
+    'second third'
+    'fourth fifth';
+  grid-gap: 10px;
+}
 
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
+#first {
+  grid-area: first;
+  background-image: url("../images/work-horiseon.jpg");
+}
+#second {
+  grid-area: second;
+  background-image: url("../images/work-open-banking.jpg");
+}
+#third {
+  grid-area: third;
+  background-image: url("../images/work-elearning.jpg");
+}
+#fourth {
+  grid-area: fourth;
+  background-image: url("../images/work-business-school.jpg");
+}
+#fifth {
+  grid-area: fifth;
+  background-image: url("../images/work-ld.jpg");  
+}
+
+.grid-item {
+  height: 300px;
+  /* border: 4px solid var(--frame); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-content: end;
+  color: var(--text);
+}
+
+.heading {
+  background-color: var(--frame);
+  opacity: 0.9;
+  padding: 15px;
+  height: 55px;
+  color: white;
+  font-size: 18px;
+  text-align: end;
+}
+
+.grid-item:hover {
+  box-shadow: 0 0 18px 8px var(--nav);
 }
 
 p {
@@ -88,6 +163,13 @@ p {
 
 .contact-section {
   text-align: center;
+}
+
+#contact ul li {
+  display: inline-block;
+  color: var(--text);
+  text-decoration: none;
+  padding: 20px;
 }
 
 .contact {
