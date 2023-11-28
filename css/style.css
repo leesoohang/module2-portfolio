@@ -15,11 +15,12 @@ Teal (darkest) #016367 */
 * {
   box-sizing: border-box;
   background-color: var(--background);
+  font-family: 'Roboto', sans-serif;
 }
 
 header {
   background-color: var(--nav);
-  height: 60px;
+  height: 90px;
   position: fixed;
   width: 100%;
   top:0;
@@ -32,7 +33,7 @@ nav {
   }
 
 nav ul {
-  margin: 10px;
+  margin: 25px;
   padding: 0;
 }
 
@@ -40,22 +41,22 @@ nav ul li {
   float: left;
   margin: 5px 20px;
   list-style-type: none;
-  font-size: 20px;  
+  font-size: 25px;  
   background-color: var(--nav);
 }
 
 nav a {
-  display: block;
   text-decoration: none;
   text-align: center;
   color: var(--background);
   background-color: var(--nav);
+  font-family: 'Satisfy', cursive;
 }
 
-h1 {
-  font-size: 20px;
+h1 {  /* My name */
+  font-size: 30px;
   top: 0;
-  margin-left: 5px;
+  margin-left: 10px;
   float: left;
   color: var(--background);
   background-color: var(--nav);
@@ -75,12 +76,13 @@ a:hover {
 }
 
 .profile-picture {
+  margin: 3px;
   float: right;
   border-radius: 50%;
 }
 
 
-h2 {
+h2 { /*Job title*/
   padding: 15px;
   position:absolute;
   top: 450px;
@@ -90,10 +92,21 @@ h2 {
   background-color: var(--nav);
 }
 
-h3 {
+h1, h3 {
+  font-family: 'Satisfy', cursive;
+}
+
+h3 { /*Sections*/
   color: var(--text);
   display:block;
   font-size: 30px;
+  border-bottom: 3px dashed var(--nav);
+}
+
+p { /*About*/
+  font-size: 1.5rem;
+  margin-bottom: 0.5px;
+  line-height: 1.25;
 }
 
 .page-section {
@@ -135,7 +148,6 @@ h3 {
 
 .grid-item {
   height: 300px;
-  /* border: 4px solid var(--frame); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -157,11 +169,10 @@ h3 {
   box-shadow: 0 0 18px 8px var(--nav);
 }
 
-p {
-  margin: 0;
+.grid-item a {
+  text-decoration: none;
 }
-
-.contact-section {
+#contact ul {
   text-align: center;
 }
 
@@ -170,9 +181,62 @@ p {
   color: var(--text);
   text-decoration: none;
   padding: 20px;
+  align-items: center;
 }
 
-.contact {
+.socials {
   height:50px;
   width: 50px;
+}
+
+/* Adjust Navbar, work grids and social icons for smaller screens */
+@media screen and (max-width: 600px) {
+  /* Bigger navbar and menu display change*/
+  header {
+    height: 150px;
+  }
+  
+  h1 {
+    margin-right: 20px;
+    float: right;
+  }
+  nav {
+    width: 100%;
+  }
+
+  nav ul li a {
+    float: none;
+    font-size: 1.2em;
+  }
+
+  /* margin change for sections */
+  .page-section {
+    margin: 10px;
+  }
+  
+   /* no float for profile pic */
+  .profile-picture {
+    float: none;
+    display: block;
+    margin: auto;
+  }
+
+  /* work grid 1 grid per row only and change size */
+  #grid-container {
+    margin: 5px 20px;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "first"
+    "second"
+    "third"
+    "fourth"
+    "fifth";
+    grid-gap: 10px;
+  }  
+  
+  .grid-item {
+    height: 200px;
+  }
 }
